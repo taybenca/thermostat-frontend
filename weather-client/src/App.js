@@ -15,8 +15,7 @@ function App() {
       .then(response => response.json())
       .then(data => setWeatherData(data), setCity('')) 
     }
-  }
-    
+  } 
 
   return (
     <div className='container'>
@@ -30,13 +29,16 @@ function App() {
 
       {typeof weatherData.main === 'undefined' ? (
         <div>
-          <p>Welcome to weather app! Enter a city to get the weather.</p>
+          <h2>Welcome to weather app! Enter a city to get the weather.</h2>
         </div>
       ) : (
         <div className='weather-data'>
           <p className='city'>{weatherData.name}</p>
           <p className='temp'>{Math.round(weatherData.main.temp)}°C</p>
-          <p className='weather'>{weatherData.weather[0].main}</p>
+          <p className='weather'>{weatherData.weather[0].description}</p>
+          <p>Min: {Math.round(weatherData.main.temp_min)}°C  Max: {Math.round(weatherData.main.temp_max)}°C</p>
+          <p>Feels like: {Math.round(weatherData.main.feels_like)}°C </p>
+          
         </div>
       )}
 
