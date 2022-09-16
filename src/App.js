@@ -27,15 +27,12 @@ function App() {
         placeholder='Enter city...'
       />
 
-
-      {}
-
       {weatherData.cod === '404' ? (
         <h2> City not found, try again 😞 </h2>
       ) : (
         typeof weatherData.main === 'undefined' ? ( // code != 404
         <div>
-          <h3>🎉 Welcome to weather app! Enter a city to get the weather.</h3>
+          <h2>🎉 Welcome to weather app! Enter a city to get the weather.</h2>
         </div>
       ) : (
         <div className='weather-data'>
