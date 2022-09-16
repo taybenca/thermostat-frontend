@@ -1,6 +1,6 @@
 
 import './App.css';
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function App() {
   
@@ -11,7 +11,7 @@ function App() {
   // Ask information to api to get something
   const getWeather = (event) => {
     if (event.key === 'Enter') {
-      fetch(`http://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`) 
+      fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`) 
       .then(response => response.json())
       .then(data => setWeatherData(data), setCity('')) 
     }
