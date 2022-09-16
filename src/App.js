@@ -27,26 +27,29 @@ function App() {
         placeholder='Enter city...'
       />
 
-      {typeof weatherData.main === 'undefined' ? (
+
+      {}
+
+      {weatherData.cod === '404' ? (
+        <h2> City not found, try again 😞 </h2>
+      ) : (
+        typeof weatherData.main === 'undefined' ? ( // code != 404
         <div>
-          <h2>Welcome to weather app! Enter a city to get the weather.</h2>
+          <h3>🎉 Welcome to weather app! Enter a city to get the weather.</h3>
         </div>
       ) : (
         <div className='weather-data'>
-          <p className='city'>{weatherData.name}</p>
+          <p className='city'>{weatherData.name} - {weatherData.sys.country}</p>
           <p className='temp'>{Math.round(weatherData.main.temp)}°C</p>
           <p className='weather'>{weatherData.weather[0].description}</p>
           <p>Min: {Math.round(weatherData.main.temp_min)}°C  Max: {Math.round(weatherData.main.temp_max)}°C</p>
           <p>Feels like: {Math.round(weatherData.main.feels_like)}°C </p>
           
         </div>
+        
+      )
       )}
-
-      {weatherData.cod === '404' ? (
-        <p> City not found, try again.</p>
-      ) : (
-        <></>
-      )}
+      
       
     </div>
   )
