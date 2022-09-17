@@ -38,13 +38,16 @@ function App() {
         <div className='weather-data'>
           <p className='city'>{weatherData.name} - {weatherData.sys.country}</p>
           <p className='temp'>{Math.round(weatherData.main.temp)}°C</p>
+          {weatherData.weather[0].description === 'clear sky' ? (
+            <h1>☀️</h1>
+          ) : (
+            <h1>☁️</h1>
+          )}
           <p className='weather'>{weatherData.weather[0].description}</p>
           <p>Min: {Math.round(weatherData.main.temp_min)}°C  Max: {Math.round(weatherData.main.temp_max)}°C</p>
           <p>Feels like: {Math.round(weatherData.main.feels_like)}°C </p>
-          
         </div>
-        
-      )
+      ) 
       )}
       
       
