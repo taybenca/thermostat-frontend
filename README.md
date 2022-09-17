@@ -18,3 +18,5 @@ So that I will know its forecast
 ## How did I approach designing my solution to the problem?
 
 I created a form so the user can add the city they want to search for. With this information, I made an API request with the data for that specific city. The user can see the current, minimum and maximum temperature for that day, the weather and the "feels like" at the moment.
+
+Use of OpenWeatherMap API
